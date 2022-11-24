@@ -337,7 +337,12 @@ function funcselect(id){
       
       break;
     default:
-      console.log("error");
+      document.getElementById('btn-phone').focus();
+      document.getElementById('btn-phone').style.outline='None';
+      table_view(phone_t);
+      
+      break;
+
       // code block
   }
 }
@@ -371,7 +376,7 @@ function table_view(val){
 
 
             <td class="table-data">
-              <button onclick="window.location.href='${project.link}';" class="btn btn-outline">Trade</button>
+              <button onclick="window.location.href='${project.link}';" class="btn btn-outline">Buy</button>
             </td>
 
         </tr>
@@ -379,4 +384,208 @@ function table_view(val){
 }).join('')
 myContent.innerHTML = showInHtml;
 }
-  
+
+
+
+
+/**Trend TAB */
+let news =[
+  {
+    id:"1",
+    pic:"./assets/images/cybersecurity.png",
+    heading:"news",
+    year:"2022",
+    title:"Cyber Security Latest News",
+    loc:"./cybersecurity_news.html"
+  },
+  {
+    id:"2",
+    pic:"./assets/images/globe.png",
+    heading:"news",
+    year:"2022",
+    title:"Global News",
+    loc:"./global_news.html"
+  }
+]
+let software =[
+  {
+    id:"1",
+    pic:"./assets/images/editing.png",
+    heading:"softwares",
+    year:"2022",
+    title:"Editing Softwares",
+    loc:"./softwares.html"
+  },
+  // {
+  //   id:"2",
+  //   pic:"./assets/images/globe.png",
+  //   heading:"news",
+  //   year:"2022",
+  //   title:"Global News",
+  //   loc:"./global_news.html"
+  // }
+]
+function mini_nav_select(id){
+  switch(id) {
+    case 1:
+      console.log("News");
+      trend_view(news);
+      
+      break;
+    case 2:
+      console.log("Softwares");
+      trend_view(software);
+     
+      break;
+    
+    default:
+      document.getElementById('btn-news').focus();
+      document.getElementById('btn-news').style.outline='None';
+      trend_view(news);
+      break;
+
+      // code block
+  }
+
+}
+const myContent2 = document.querySelector(".myContent2");
+function trend_view(val){
+  const showInHtml = val.map((project, index) => {
+    return `
+
+    <li>
+    <div class="trend-card" onclick="window.location='${project.loc}'">
+
+      <div class="card-title-wrapper">
+        <img src="${project.pic}" width="24" height="24" alt="pic">
+
+        <a href="#" class="card-title">
+         ${project.heading} <span class="span">${project.year}</span>
+        </a>
+      </div>
+
+      <data class="card-value" value="46168.95">${project.title}</data>
+
+    </div>
+  </li>
+  `
+
+}).join('')
+myContent2.innerHTML = showInHtml;
+}
+
+
+let edit_software=[
+  {
+      id:"1",
+      p_name:"Adobe Illustrator",
+      col3:"Adobe",
+      col4:"1.9 GB",
+      link:"https://getintopc.com/?s=illustrator",
+      pic:"./assets/images/illustrator.png"
+  },
+  {
+      id:"2",
+      p_name:"Adobe Photoshop",
+      col3:"Adobe",
+      col4:"2.2 GB",
+      link:"https://getintopc.com/?s=photoshop",
+      pic:"./assets/images/photoshop.png"
+  },
+  {
+      id:"3",
+      p_name:"Adobe After Effects",
+      col3:"Adobe",
+      col4:"2.4 GB",
+      link:"https://getintopc.com/?s=adobe+after+effects",
+      pic:"./assets/images/after-effects.png"
+  },
+  {
+      id:"4",
+      p_name:"Adobe Premiere Pro",
+      col3:"Adobe",
+      col4:"512 GB",
+      link:"https://getintopc.com/?s=premiere+pro",
+      pic:"./assets/images/premiere.png"
+  },
+  {
+      id:"5",
+      p_name:"Adobe Media Encoder",
+      col3:"Adobe",
+      col4:"630 MB",
+      link:"https://getintopc.com/?s=media+encoder",
+      pic:"./assets/images/media-encoder.png"
+  },
+  {
+      id:"6",
+      p_name:"Adobe Lightroom",
+      col3:"Adobe",
+      col4:"1.3 GB",
+      link:"https://getintopc.com/?s=lightroom",
+      pic:"./assets/images/lightroom.png"
+  },
+  {
+      id:"7",
+      p_name:"Adobe InDesign",
+      col3:"Adobe",
+      col4:"890 MB",
+      link:"https://getintopc.com/?s=InDesign",
+      pic:"./assets/images/indesign.png"
+  },
+  {
+      id:"8",
+      p_name:"Sony Vegas Pro",
+      col3:"Sony",
+      col4:"701 MB",
+      link:"https://getintopc.com/?s=sony+vegas+pro",
+      pic:"./assets/images/sony-vegas.png"
+  },
+  {
+      id:"9",
+      p_name:"CorelDRAW Graphics Suite",
+      col3:"Corel Corp",
+      col4:"78 MB",
+      link:"https://getintopc.com/?s=CorelDRAW+Graphics+Suite+2022+Free+Download",
+      pic:"./assets/images/corel.png"
+  },
+]
+
+const edit_soft = document.querySelector(".edit_softwares");
+function edit_soft_view(val){
+  const showInHtml = edit_software.map((project, index) => {
+    return `
+
+    <tr class="table-row">
+
+              <td class="table-data">
+                <button class="add-to-fav" aria-label="Add to favourite" data-add-to-fav>
+                  <ion-icon name="star-outline" aria-hidden="true" class="icon-outline"></ion-icon>
+                  <ion-icon name="star" aria-hidden="true" class="icon-fill"></ion-icon>
+                </button>
+              </td>
+
+              
+
+              <td class="table-data">
+                <div class="edit_items">
+                  <img src="${project.pic}" width="20" height="20" alt="logo" class="img">
+
+                  <h3>
+                    <a href="#" class="coin-name">${project.p_name} <span class="span"></span></a>
+                  </h3>
+                </div>
+              </td>
+
+              <td class="table-data last-price">${project.col3}</td>
+
+              <td class="table-data last-update green">${project.col4}</td>
+              <td class="table-data">
+                <button class="btn btn-outline">Download</button>
+              </td>
+
+            </tr>
+  `
+
+}).join('')
+edit_soft.innerHTML = showInHtml;
+}

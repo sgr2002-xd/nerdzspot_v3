@@ -25,7 +25,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body onload="funcselect(10);mini_nav_select(10);">
 
   <!-- 
     - #HEADER
@@ -112,15 +112,15 @@
 
             <ul class="tab-nav">
 
-              <!-- <li>
-                <button class="tab-btn active">Crypto</button>
-              </li> -->
-
-              <!-- <li>
-                <button class="tab-btn">DeFi</button>
+              <li>
+                <button id="btn-news" onclick="mini_nav_select(1)" class="tab-btn">News</button>
               </li>
 
               <li>
+                <button onclick="mini_nav_select(2)" class="tab-btn">Softwares</button>
+              </li>
+
+              <!--<li>
                 <button class="tab-btn">BSC</button>
               </li>
 
@@ -150,97 +150,10 @@
 
             </ul>
 
-            <ul class="tab-content">
+            <ul class="tab-content myContent2">
 
-              <li>
-                <div class="trend-card" onclick="window.location='./latest_news.html'">
-
-                  <div class="card-title-wrapper">
-                    <img src="./assets/images/coin-1.svg" width="24" height="24" alt="bitcoin logo">
-
-                    <a href="#" class="card-title">
-                     News <span class="span">2022</span>
-                    </a>
-                  </div>
-
-                  <data class="card-value" value="46168.95">Latest News</data>
-
-                  <!-- <div class="card-analytics">
-                    <data class="current-price" value="36641.20">36,641.20</data>
-
-                    <div class="badge red">-0.79%</div>
-                  </div> -->
-
-                </div>
-              </li>
-
-              <!-- <li>
-                <div class="trend-card active">
-
-                  <div class="card-title-wrapper">
-                    <img src="./assets/images/coin-2.svg" width="24" height="24" alt="ethereum logo">
-
-                    <a href="#" class="card-title">
-                      Ethereum <span class="span">ETH/USD</span>
-                    </a>
-                  </div>
-
-                  <data class="card-value" value="3480.04">USD 3,480.04</data>
-
-                  <div class="card-analytics">
-                    <data class="current-price" value="36641.20">36,641.20</data>
-
-                    <div class="badge green">+10.55%</div>
-                  </div>
-
-                </div>
-              </li> -->
-
-              <!-- <li>
-                <div class="trend-card">
-
-                  <div class="card-title-wrapper">
-                    <img src="./assets/images/coin-3.svg" width="24" height="24" alt="tether logo">
-
-                    <a href="#" class="card-title">
-                      Tether <span class="span">USDT/USD</span>
-                    </a>
-                  </div>
-
-                  <data class="card-value" value="1.00">USD 1.00</data>
-
-                  <div class="card-analytics">
-                    <data class="current-price" value="36641.20">36,641.20</data>
-
-                    <div class="badge red">-0.01%</div>
-                  </div>
-
-                </div>
-              </li> -->
-
-              <!-- <li>
-                <div class="trend-card">
-
-                  <div class="card-title-wrapper">
-                    <img src="./assets/images/coin-4.svg" width="24" height="24" alt="bnb logo">
-
-                    <a href="#" class="card-title">
-                      BNB <span class="span">BNB/USD</span>
-                    </a>
-                  </div>
-
-                  <data class="card-value" value="443.56">USD 443.56</data>
-
-                  <div class="card-analytics">
-                    <data class="current-price" value="36641.20">36,641.20</data>
-
-                    <div class="badge red">-1.24%</div>
-                  </div>
-
-                </div>
-              </li> -->
-
-            </ul>
+              <!-- Content from js               -->
+             </ul>
 
           </div>
 
@@ -261,7 +174,7 @@
           <div class="title-wrapper">
             <h2 class="h2 section-title">Top 10</h2>
 
-            <a href="#" class="btn-link">dummy link</a>
+            <p  class="btn-link">Select to View</p>
           </div>
 
           <div class="market-tab">
@@ -273,7 +186,7 @@
               </li> -->
 
               <li >
-                <button data-tab-target="#phone" class="tab-btn active" onclick="funcselect(1)">Smart Phones</button>
+                <button  id="btn-phone" data-tab-target="#phone" class="tab-btn" onclick="funcselect(1)">Smart Phones</button>
               </li>
 
               <li>
@@ -304,19 +217,19 @@
 
                 <tr class="table-row table-title">
 
-                  <!-- <th class="table-heading"></th>
+                  <th class="table-heading"></th>
 
                   <th class="table-heading" scope="col">Name</th>
 
                   <th class="table-heading" scope="col">Brand</th>
 
+                  <th class="table-heading" scope="col">Storage</th>
+
                   <th class="table-heading" scope="col">Battery</th>
 
-                  <th class="table-heading" scope="col">Storage</th> -->
+                  <th class="table-heading" scope="col">Amazon Link</th>
 
-                  <!-- <th class="table-heading" scope="col">Market Cap</th>
-
-                  <th class="table-heading" scope="col">Last 7 Days</th> -->
+                  <!-- <th class="table-heading" scope="col">Last 7 Days</th> -->
 
                   <th class="table-heading"></th>
 
@@ -372,11 +285,10 @@
       <section class="section instruction" aria-label="instruction" data-section>
         <div class="container">
 
-          <h2 class="h2 section-title">How It Work</h2>
+          <h2 class="h2 section-title">Vision</h2>
 
           <p class="section-text">
-            Stacks is a production-ready library of stackable content blocks built in React Native.
-          </p>
+            Sustainability, Honesty + Integrity, Ethical + Eco-Conscious, Value + Creativity, and Self-Love.          </p>
 
           <ul class="instruction-list">
 
@@ -775,18 +687,18 @@
 
           <li>
             <a href="#" class="social-link">
-              <ion-icon name="logo-twitter"></ion-icon>
+              <ion-icon name="paper-plane-outline"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" class="social-link">
+            <a href="https://www.instagram.com/_.s.g.r___/" class="social-link">
               <ion-icon name="logo-instagram"></ion-icon>
             </a>
           </li>
 
           <li>
-            <a href="#" class="social-link">
+            <a href="https://www.linkedin.com/in/guru-raghav-3454741b8/" class="social-link">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
