@@ -43,21 +43,7 @@ const closeNavbar = function () {
 addEventOnElem(navbarLinks, "click", closeNavbar);
 
 
-// const tabs= document.querySelectorAll('[data-tab-target]')
-// const tabContents = document.querySelectorAll('[data-tab-content]')
-// tabs.forEach(tab =>{
-//   tab.addEventListener('click',()=>{
-//     const target =document.querySelector(tab.dataset.tabTarget);
-//     tabContents.forEach(tabContent => {tabContent.classList.remove('active')
-//     target.classList.toggle('active')
-//   })
-    
-//   })
-  
-// })
-/**
- * header active
- */
+
 
 const header = document.querySelector("[data-header]");
 
@@ -165,7 +151,7 @@ let phone = [
     p_name:"Apple iPhone 13",
     col3:"Apple",
     col4:"12GB",
-    col5:"nil",
+    col5:"3227 mAh",
     link:"https://w3docs.com"
   },
   {
@@ -197,7 +183,7 @@ let phone = [
     p_name:"Apple iPhone 12",
     col3:"Apple",
     col4:"256GB",
-    col5:"nil",
+    col5:"2815 mAh",
     link:"https://w3docs.com"
   },
   {
@@ -589,3 +575,71 @@ function edit_soft_view(val){
 }).join('')
 edit_soft.innerHTML = showInHtml;
 }
+/** HomeWork Solutions */
+
+
+
+
+function ques_ans_view(val){
+  const ques_ans = document.querySelector(".homework_sol");
+  let ques=[
+    {
+      id:"1",
+      ques:"What is your name?",
+      ans:"SGR"
+    },
+    {
+      id:"2",
+      ques:"What is your name?",
+      ans:"SGR"
+    },
+    {
+      id:"2",
+      ques:"What is your name?",
+      ans:"SGR"
+    },
+    
+    
+  
+  ]
+  const showInHtml = ques.map((project, index) => {
+    return `
+
+    <details itemscope itemprop="mainEntity" >
+        <summary itemprop="name">${project.ques}</summary>
+          <div class="details-expanded" itemscope itemprop="acceptedAnswer" >
+          <p>${project.ans}</p>
+        </div>
+      </details>
+  `
+
+}).join('')
+ques_ans.innerHTML = showInHtml;
+}
+/**Like Button */
+let count=16745;
+var button = document. getElementById('like');
+button. onclick = function() {
+count += 1;
+display(count);
+
+};
+function display(){
+  button. innerHTML = "Likes: " + count;
+}
+
+
+
+var myElement = document.getElementById('image'),
+    imgList = [
+  "/Users/sgr/Development/Blogs/nerdzspot_v3/assets/images/memoji1.png",
+  "/Users/sgr/Development/Blogs/nerdzspot_v3/assets/images/memoji2.png",
+];
+function changeImage (myElement, imgList) {
+  setInterval(function(){
+    randomImage = Math.floor( Math.random() * imgList.length);
+    myElement.style.backgroundImage = "url('" + imgList[randomImage] + "')";
+  }, 1000);
+}
+changeImage(myElement, imgList);
+
